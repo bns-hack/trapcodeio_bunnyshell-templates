@@ -1,0 +1,17 @@
+name: GoFiber + Vue + MongoDB
+description: This is a boilerplate for creating a new environment using GoLang Fiber, MongoDb, Vue+Vite (with Typescript) and MongoDB. It contains a basic CRUD example to demonstrate how components connect and make it easy to start with.
+tags: [go, fiber, vue, typescript, mongo, vite, tailwindcss]
+icons: [go, fiber, vue, typescript, mongo, vite, tailwindcss]
+stack:
+  packages:
+    - name: Go
+      version: "1.19"
+    - name: Fiber
+      version: "2"
+    - name: Vue
+      version: "3"
+    - name: Vite
+      version: "4"
+    - name: MongoDB
+      version: "4.4"
+discoverable: true
