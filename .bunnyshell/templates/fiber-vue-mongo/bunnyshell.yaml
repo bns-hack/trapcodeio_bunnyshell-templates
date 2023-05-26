@@ -11,7 +11,7 @@ components:
       build:
         context: ./
         dockerfile: .docker/Dockerfile
-        target: build
+        target: release
       ports:
         - "9000:9000"
     hosts:
