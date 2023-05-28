@@ -13,7 +13,7 @@ components:
         dockerfile: .docker/Dockerfile
       environment:
         DENO_ENV: development
-        POSTGRES: HOST=db # name of the "db" service
+        POSTGRES_HOST: db # name of the "db" service
         POSTGRES_DB: books
         POSTGRES_USER: postgres
         POSTGRES_PASSWORD: need-to-replace
