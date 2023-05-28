@@ -32,14 +32,14 @@ components:
         POSTGRES_PASSWORD: need-to-replace
         POSTGRES_USER: postgres
       image: postgres:15.2-alpine3.17
+      volumes:
+        - db-data:/var/lib/postgresql/data
+        - ./../database/sql:/docker-entrypoint-initdb.d
       ports:
         - '5432:5432'
     volumes:
       - name: data-volume
         mount: /var/lib/postgresql/data
-        subPath: ''
-      - name: sql
-        mount: ./../database/sql:/docker-entrypoint-initdb.d
         subPath: ''
 
   - kind: Application
