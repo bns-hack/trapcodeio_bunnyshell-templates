@@ -1,13 +1,13 @@
 #file: noinspection YAMLSchemaValidation
-name: Express + Vue + PostgreSQL
-description: This is a boilerplate for creating a new environment using Node, Express, Vue+Vite (with Typescript) and Postgres. It contains a basic CRUD example to demonstrate how components connect and make it easy to start with.
-tags: [ nodejs, express, vue, typescript, postgres, vite, tailwindcss ]
-icons: [ nodejs, express, vue, typescript, postgres, vite, tailwindcss ]
+name: Oak + Vue + PostgreSQL
+description: This is a boilerplate for creating a new environment using Deno, Oak, Vue+Vite (with Typescript) and Postgres. It contains a basic CRUD example to demonstrate how components connect and make it easy to start with.
+tags: [ deno, oak, vue, typescript, postgres, vite, tailwindcss ]
+icons: [ deno, oak, vue, typescript, postgres, vite, tailwindcss ]
 stack:
   packages:
-    - name: Node.js
+    - name: Deno
       version: '18'
-    - name: Express
+    - name: Oak
       version: '4'
     - name: Vue
       version: "3"

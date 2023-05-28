@@ -1,6 +1,6 @@
 # Template overview
 
-This Environment [Template](https://documentation.bunnyshell.com/docs/templates-what-are-templates) is a boilerplate for creating a new environment based on a stack using Node.js with Express for the backend, Vue with Typescript for the frontend and PostgreSQL as the database.
+This Environment [Template](https://documentation.bunnyshell.com/docs/templates-what-are-templates) is a boilerplate for creating a new environment based on a stack using Deno with Oak for the backend, Vue with Typescript for the frontend and PostgreSQL as the database.
 
 The template provides the Bunnyshell configuration composed of 3 Components (frontend + backend + database) and the CRUD application that demonstrates how the components work together to form an environment.
 
@@ -14,7 +14,7 @@ An [Environment in Bunnyshell](https://documentation.bunnyshell.com/docs/environ
 
 This Environment Template contains 3 components:
 - `app` for frontend, based on a `node` image
-- `api` for backend, also based on a `node` image
+- `api` for backend, also based on a `deno` image
 - `db` using a `postgres` image
 
 and 1 persistent volume:
@@ -105,7 +105,7 @@ Please note that **you must start the application** manually, as you may need to
 $ bns remote-development up --component {YOUR_COMPONENT_ID}
 ? Local Path {YOUR_OWN_LOCAL_PATH}}
 ? Remote Path /usr/src/app/backend
-/usr/src/app/backend # npm run start:dev
+/usr/src/app/backend # deno task dev
 ```
 
 📖 For more information on starting a remote Development session, please see:
@@ -137,7 +137,7 @@ Using the SSH config file, you can now configure your IDE to connect remotely to
 Please note that using the Terminal from the IDE, **you must start the application** manually, as you may need to start the application in a number of ways, eg. with or without debugging.
 
 ```
-/usr/src/app/backend # npm run start:dev
+/usr/src/app/backend # deno task dev
 ```
 
 📖 For more information on starting a remote Development session, please see:
@@ -177,8 +177,8 @@ The configuration differs based on the way you chose to work, and also on your I
 
 When debugging with local code, you need to:
 1. start the Remote Development session with port-forwarding on the debugger's port (`9229` for `nodemon`)
-2. start the node process (eg. run `npm run start:dev`) in the shell you're left in after the `bns remote-development up` command finishes
-3. [set up the IDE with a debugging configuration](https://documentation.bunnyshell.com/docs/remote-development-debugging-nodejs#setting-up-the-ide) on the debugger's port (`9229` for `nodemon`)
+2. start the deno process (eg. run `deno task dev`) in the shell you're left in after the `bns remote-development up` command finishes
+3. [set up the IDE with a debugging configuration](https://documentation.bunnyshell.com/docs/remote-development-debugging-deno#setting-up-the-ide) on the debugger's port (`9229` for `nodemon`)
 4. define a file mapping (local to remote) for the IDE configuration (eg. `{YOUR_OWN_LOCAL_PATH}}` to `/usr/src/app/backend`)
 5. start the debug process from your IDE
 
@@ -187,7 +187,7 @@ For the `api` service, you need to run:
 $ bns remote-development up --port-forward "9229>9229"
 ? Local Path {YOUR_OWN_LOCAL_PATH}}
 ? Remote Path /usr/src/app/backend
-/usr/src/app/backend # npm run start:dev
+/usr/src/app/backend # deno task dev
 ```
 💡 Remember that you can pass in the optional flag `--component {YOUR_COMPONENT_ID}` to skip running the wizard to choose the Component.
 
@@ -195,7 +195,7 @@ You can now add breakpoints and start debugging.
 
 📖 For more information on debugging locally, please see:
 - [Debugging locally with port forwarding](https://documentation.bunnyshell.com/docs/remote-development-debugging)
-  - [Debugging node.js](https://documentation.bunnyshell.com/docs/remote-development-debugging-nodejs) for both `app` and `api`
+  - [Debugging deno](https://documentation.bunnyshell.com/docs/remote-development-debugging-deno) for both `app` and `api`
 
 &nbsp;
 
@@ -206,7 +206,7 @@ When debugging with remote code, you need to:
 2. install the necessary IDE extensions (if any): see [Prepare VS Code Extensions](https://documentation.bunnyshell.com/docs/remote-development-configure-vs-code-pre-requisites#prepare-vs-code-extensions)
 3. start the Remote Development session with no code sync, `--sync-mode none` and (optionally) without an interactive shell once the preparation is done `--no-tty` (See "Working with code from the container" from the current Template description)
 4. [configure the IDE SSH connection](https://documentation.bunnyshell.com/docs/remote-development-configure-vs-code-connection)
-5. [start the debug process from your IDE](https://documentation.bunnyshell.com/docs/remote-development-configure-vs-code-debug-nodejs)
+5. [start the debug process from your IDE](https://documentation.bunnyshell.com/docs/remote-development-configure-vs-code-debug-deno)
 
 For the `api` service, you need to run:
 ```
@@ -217,9 +217,9 @@ You can find the SSH Config file in /Users/myuser/.bunnyshell/remote-dev/ssh-con
 ```
 💡 Remember that you can pass in the optional flag `--component {YOUR_COMPONENT_ID}` to skip running the wizard to choose the Component.
 
-And within the IDE terminal, you need to start the `node` process with debugging capabilities:
+And within the IDE terminal, you need to start the `deno` process with debugging capabilities:
 ```
-/usr/src/app/backend # npm run start:dev
+/usr/src/app/backend # deno task dev
 ```
 
 You can now add breakpoints and start debugging.
@@ -250,4 +250,4 @@ You must change all passwords and review all parameters to ensure that your Envi
 
 
 # Source
-Boilerplate: [express-react-mongo](https://github.com/bunnyshell/templates/blob/main/.bunnyshell/templates/express-react-mongo/README.md)
+Boilerplate: [oak-react-mongo](https://github.com/bunnyshell/templates/blob/main/.bunnyshell/templates/oak-react-mongo/README.md)
