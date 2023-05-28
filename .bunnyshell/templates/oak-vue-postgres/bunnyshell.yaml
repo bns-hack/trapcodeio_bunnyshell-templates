@@ -38,10 +38,9 @@ components:
       - name: data-volume
         mount: /var/lib/postgresql/data
         subPath: ''
-      - ./../database/sql:/docker-entrypoint-initdb.d
-#      - name: sql
-#        mount: /docker-entrypoint-initdb.d
-#        subPath: ''
+      - name: sql
+        mount: ./../database/sql:/docker-entrypoint-initdb.d
+        subPath: ''
 
   - kind: Application
     name: app
