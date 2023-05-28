@@ -13,6 +13,7 @@ components:
         dockerfile: .docker/Dockerfile
       environment:
         DENO_ENV: development
+        APP_PORT: 9000
         POSTGRES_HOST: db # name of the "db" service
         POSTGRES_DB: books
         POSTGRES_USER: postgres
