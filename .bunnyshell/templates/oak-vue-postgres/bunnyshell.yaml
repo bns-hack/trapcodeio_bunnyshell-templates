@@ -38,6 +38,11 @@ components:
       - name: data-volume
         mount: /var/lib/postgresql/data
         subPath: ''
+      - ./../database/sql:/docker-entrypoint-initdb.d
+#      - name: sql
+#        mount: /docker-entrypoint-initdb.d
+#        subPath: ''
+
   - kind: Application
     name: app
     gitRepo: "https://github.com/trapcodeio/vue-books-app.git"
