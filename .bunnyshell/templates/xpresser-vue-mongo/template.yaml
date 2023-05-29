@@ -1,0 +1,18 @@
+#file: noinspection YAMLSchemaValidation
+name: XpresserJs + Vue + MongoDB
+description: This is a boilerplate for creating a new environment using XpresserJs, MongoDb, Vue+Vite (with Typescript) and MongoDB. It contains a basic CRUD example to demonstrate how components connect and make it easy to start with.
+tags: [ nodejs, xpresser, vue, typescript, mongo, vite, tailwindcss ]
+icons: [ nodejs, xpresser, vue, typescript, mongo, vite, tailwindcss ]
+stack:
+  packages:
+    - name: Node.js
+      version: "18"
+    - name: XpresserJS
+      version: "0.31"
+    - name: Vue
+      version: "3"
+    - name: Vite
+      version: "4"
+    - name: MongoDB
+      version: "4.4"
+discoverable: true

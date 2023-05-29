@@ -1,6 +1,6 @@
 #file: noinspection YAMLSchemaValidation
 name: Actix + Vue + MongoDB
-description: This is a boilerplate for creating a new environment using GoLang Fiber, MongoDb, Vue+Vite (with Typescript) and MongoDB. It contains a basic CRUD example to demonstrate how components connect and make it easy to start with.
+description: This is a boilerplate for creating a new environment using Rust Actix, MongoDb, Vue+Vite (with Typescript) and MongoDB. It contains a basic CRUD example to demonstrate how components connect and make it easy to start with.
 tags: [ rust, actix, vue, typescript, mongo, vite, tailwindcss ]
 icons: [ rust, actix, vue, typescript, mongo, vite, tailwindcss ]
 stack:
