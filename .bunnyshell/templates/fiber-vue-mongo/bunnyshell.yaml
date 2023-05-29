@@ -14,7 +14,7 @@ components:
         target: build
       environment:
         APP_PORT: 9000
-        DB_SERVER: "mongodb://mongo/books"
+        MONGODB_SERVER: "mongodb://mongo/books"
       ports:
         - "9000:9000"
     hosts:

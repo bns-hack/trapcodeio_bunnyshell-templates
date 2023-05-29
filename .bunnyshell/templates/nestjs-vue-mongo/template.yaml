@@ -1,3 +1,4 @@
+#file: noinspection YAMLSchemaValidation
 name: NestJS + Vue + MongoDB
 description: This is a boilerplate for creating a new environment using Node, NestJS, Vue+Vite (with Typescript) and MongoDB. It contains a basic CRUD example to demonstrate how components connect and make it easy to start with.
 tags: [nodejs, nestjs, vue, typescript, mongo, vite, tailwindcss]

@@ -15,8 +15,7 @@ components:
       environment:
         APP_PORT: 9000
         NODE_ENV: development
-        DB_SERVER: "mongodb://mongo/books"
-        DB_NAME: books
+        MONGODB_SERVER: "mongodb://mongo/books"
       ports:
         - "9000:9000"
     hosts:
