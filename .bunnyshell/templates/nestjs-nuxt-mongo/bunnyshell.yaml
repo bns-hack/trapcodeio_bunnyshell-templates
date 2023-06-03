@@ -40,6 +40,9 @@ components:
         context: ./
         dockerfile: .docker/Dockerfile
         target: dev
+        args:
+          - NITRO_PORT=8080
+          - VITE_API_URL=https://{{ components.api.ingress.hosts[0] }}
       environment:
         NITRO_PORT: 8080
         VITE_API_URL: "https://{{ components.api.ingress.hosts[0] }}"
