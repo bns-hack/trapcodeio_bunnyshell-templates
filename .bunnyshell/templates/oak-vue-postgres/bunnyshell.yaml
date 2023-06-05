@@ -11,6 +11,7 @@ components:
       build:
         context: ./
         dockerfile: .docker/Dockerfile
+        target: dev
       environment:
         DENO_ENV: development
         APP_PORT: 9000
