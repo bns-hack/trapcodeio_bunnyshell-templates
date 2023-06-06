@@ -227,7 +227,7 @@ When debugging with local code, you need to:
 2. start the deno process with debug enabled (eg. run `deno task debug`) in the shell you're left in after the `bns remote-development up`
    command finishes
 3. [set up the IDE with a debugging configuration](https://documentation.bunnyshell.com/docs/remote-development-debugging-deno#setting-up-the-ide)
-   on the debugger's port (`9229` for `deno`)
+   on the debuggers port (`9229` for `deno`)
 4. define a file mapping (local to remote) for the IDE configuration (eg. `{YOUR_OWN_LOCAL_PATH}}`
    to `/usr/src/app`)
 5. start the debug process from your IDE
@@ -235,7 +235,7 @@ When debugging with local code, you need to:
 For the `api` service, you need to run:
 
 ```
-$ bns remote-development up --port-forward "9229>9229"
+$ bns remote-development up --port-forward "9000>9000,9229>9229"
 ? Local Path {YOUR_OWN_LOCAL_PATH}}
 ? Remote Path /usr/src/app
 /usr/src/app # deno task debug
@@ -249,10 +249,9 @@ You can now add breakpoints and start debugging.
 📖 For more information on debugging locally, please see:
 
 - [Debugging locally with port forwarding](https://documentation.bunnyshell.com/docs/remote-development-debugging)
-    - [Debugging deno](https://documentation.bunnyshell.com/docs/remote-development-debugging-deno) for both `app`
+    - [Debugging deno](https://deno.com/manual@v1.0.0/tools/debugger) for both `app`
       and `api`
 
-&nbsp;
 
 #### Debugging backend with code from the container
 
@@ -266,7 +265,6 @@ When debugging with remote code, you need to:
    shell once the preparation is done `--no-tty` (See "Working with code from the container" from the current Template
    description)
 4. [configure the IDE SSH connection](https://documentation.bunnyshell.com/docs/remote-development-configure-vs-code-connection)
-5. [start the debug process from your IDE](https://documentation.bunnyshell.com/docs/remote-development-configure-vs-code-debug-deno)
 
 For the `api` service, you need to run:
 
