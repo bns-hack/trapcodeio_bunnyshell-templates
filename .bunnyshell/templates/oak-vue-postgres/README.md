@@ -223,13 +223,13 @@ The configuration differs based on the way you chose to work, and also on your I
 
 When debugging with local code, you need to:
 
-1. start the Remote Development session with port-forwarding on the debugger's port (`9229` for `nodemon`)
-2. start the deno process (eg. run `deno task dev`) in the shell you're left in after the `bns remote-development up`
+1. start the Remote Development session with port-forwarding on the debugger's port (`9229` for `deno`)
+2. start the deno process with debug enabled (eg. run `deno task debug`) in the shell you're left in after the `bns remote-development up`
    command finishes
 3. [set up the IDE with a debugging configuration](https://documentation.bunnyshell.com/docs/remote-development-debugging-deno#setting-up-the-ide)
-   on the debugger's port (`9229` for `nodemon`)
+   on the debugger's port (`9229` for `deno`)
 4. define a file mapping (local to remote) for the IDE configuration (eg. `{YOUR_OWN_LOCAL_PATH}}`
-   to `/usr/src/app/backend`)
+   to `/usr/src/app`)
 5. start the debug process from your IDE
 
 For the `api` service, you need to run:
@@ -237,8 +237,8 @@ For the `api` service, you need to run:
 ```
 $ bns remote-development up --port-forward "9229>9229"
 ? Local Path {YOUR_OWN_LOCAL_PATH}}
-? Remote Path /usr/src/app/backend
-/usr/src/app/backend # deno task dev
+? Remote Path /usr/src/app
+/usr/src/app # deno task debug
 ```
 
 💡 Remember that you can pass in the optional flag `--component {YOUR_COMPONENT_ID}` to skip running the wizard to choose
@@ -283,7 +283,7 @@ the Component.
 And within the IDE terminal, you need to start the `deno` process with debugging capabilities:
 
 ```
-/usr/src/app/backend # deno task dev
+/usr/src/app # deno task debug
 ```
 
 You can now add breakpoints and start debugging.
