@@ -15,7 +15,7 @@ block storage etc.
 # Environment overview
 
 An [Environment in Bunnyshell](https://documentation.bunnyshell.com/docs/environments) is a user-defined group that
-brings together applications and all of the services and databases those applications require.
+brings together applications and all the services and databases those applications require.
 
 This Environment Template contains 3 components:
 
@@ -39,7 +39,7 @@ The stage (`dev` or `prod`) can be set from the Environment's configuration (`bu
 Component's `dockerCompose.build.target` property. The default is `dev`, and it can be changed to `prod` to produce
 production-like images.
 
-&nbsp;
+
 
 # How to use this Template
 
@@ -56,7 +56,7 @@ Remote Development.
 Staging / Testing Environments should be created with the `prod` target for images, in order to have the application
 running as it does in production.
 
-&nbsp;
+
 
 ## Staging / Testing
 
@@ -65,7 +65,6 @@ For staging / testing purposes, the Environments just need to be deployed.
 You need to ensure that the `dockerCompose.build.target` is set to `prod` for all the Components, and
 then [deploy the Environment](https://documentation.bunnyshell.com/docs/environment-workflows-deploy).
 
-&nbsp;
 
 ## Remote Development
 
@@ -125,7 +124,7 @@ You need to provide 2 additional paths:
 
 - the *local path*, for your local code files
 - the *remote path*: the path where code files are located within the container (you can find this out from
-  the `Dockerfile`, it's in the `WORKDIR` statement); for the `backend` application, it is `/usr/src/app/backend`.
+  the `Dockerfile`, it's in the `WORKDIR` statement); for the `api` application, it is `/usr/src/app`.
 
 💡 The wizard will require these from you, but you can also provide them as options, `-l` and `-r` respectively.
 
@@ -137,8 +136,8 @@ ways, eg. with or without debugging.
 ```
 $ bns remote-development up --component {YOUR_COMPONENT_ID}
 ? Local Path {YOUR_OWN_LOCAL_PATH}}
-? Remote Path /usr/src/app/backend
-/usr/src/app/backend # deno task dev
+? Remote Path /usr/src/app
+/usr/src/app # deno task dev
 ```
 
 📖 For more information on starting a remote Development session, please see:
@@ -156,13 +155,13 @@ also want to pass in `--no-tty`, to disable leaving an SSH terminal into the con
 on your preferences.
 
 You need to provide the *remote path*: the path where code files are located within the container (you can find this out
-from the `Dockerfile`, it's in the `WORKDIR` statement); for the `api` application, it is `/usr/src/app/backend`.
+from the `Dockerfile`, it's in the `WORKDIR` statement); for the `api` application, it is `/usr/src/app`.
 
 💡 The wizard will require this from you, but you can also provide it as an option, using `-r`.
 
 ```
 bns remote-development up --sync-mode none --no-tty
-? Remote Path /usr/src/app/backend
+? Remote Path /usr/src/app
 Pod is ready for Remote Development.
 You can find the SSH Config file in /Users/myuser/.bunnyshell/remote-dev/ssh-config
 ```
@@ -177,7 +176,7 @@ Please note that using the Terminal from the IDE, **you must start the applicati
 the application in a number of ways, eg. with or without debugging.
 
 ```
-/usr/src/app/backend # deno task dev
+/usr/src/app # deno task dev
 ```
 
 📖 For more information on starting a remote Development session, please see:
@@ -273,7 +272,7 @@ For the `api` service, you need to run:
 
 ```
 $ bns remote-development up --sync-mode none --no-tty
-? Remote Path /usr/src/app/backend
+? Remote Path /usr/src/app
 Pod is ready for Remote Development.
 You can find the SSH Config file in /Users/myuser/.bunnyshell/remote-dev/ssh-config
 ```
@@ -293,7 +292,7 @@ You can now add breakpoints and start debugging.
 
 - [Debugging remotely with VS Code](https://documentation.bunnyshell.com/docs/remote-development-configure-vs-code)
 
-&nbsp;
+
 
 #### Debugging frontend
 
@@ -306,11 +305,7 @@ You only need to configure your IDE for the Remote Environment, and this is a ma
 
 - [Debugging frontend apps](https://documentation.bunnyshell.com/docs/remote-development-debugging-frontend)
 
-&nbsp;
-
 ---
-
-&nbsp;
 
 # Important Note
 
@@ -318,4 +313,4 @@ You must change all passwords and review all parameters to ensure that your Envi
 
 # Source
 
-Boilerplate: [oak-react-mongo](https://github.com/bunnyshell/templates/blob/main/.bunnyshell/templates/oak-react-mongo/README.md)
+Boilerplate: [nestjs-react-mongo](https://github.com/bunnyshell/templates/blob/main/.bunnyshell/templates/nestjs-react-mongo/README.md)
