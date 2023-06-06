@@ -1,8 +1,8 @@
 # Template overview
 
 This Environment [Template](https://documentation.bunnyshell.com/docs/templates-what-are-templates) is a boilerplate for
-creating a new environment based on a stack using Node.js with Express for the backend, Vue with Typescript for the
-frontend and PostgreSQL as the database.
+creating a new environment based on a stack using Node.js with XpresserJs for the backend, Vue with Typescript for the
+frontend and MongoDB as the database.
 
 The template provides the Bunnyshell configuration composed of 3 Components (frontend + backend + database) and the CRUD
 application that demonstrates how the components work together to form an environment.
@@ -15,7 +15,7 @@ block storage etc.
 # Environment overview
 
 An [Environment in Bunnyshell](https://documentation.bunnyshell.com/docs/environments) is a user-defined group that
-brings together applications and all of the services and databases those applications require.
+brings together applications and all the services and databases those applications require.
 
 This Environment Template contains 3 components:
 
@@ -317,4 +317,4 @@ You must change all passwords and review all parameters to ensure that your Envi
 
 # Source
 
-Boilerplate: [express-react-mongo](https://github.com/bunnyshell/templates/blob/main/.bunnyshell/templates/express-react-mongo/README.md)
+Boilerplate: [nestjs-react-mongo](https://github.com/bunnyshell/templates/blob/main/.bunnyshell/templates/nestjs-react-mongo/README.md)

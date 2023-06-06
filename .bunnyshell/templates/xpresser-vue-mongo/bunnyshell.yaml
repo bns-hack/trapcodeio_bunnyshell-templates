@@ -12,9 +12,9 @@ components:
         context: ./
         dockerfile: .docker/Dockerfile
         target: dev
+        args:
+          APP_PORT: 9000
       environment:
-        APP_PORT: 9000
-        NODE_ENV: development
         MONGODB_SERVER: "mongodb://mongo/books"
       ports:
         - "9000:9000"
