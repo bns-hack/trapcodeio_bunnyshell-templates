@@ -6,4 +6,5 @@ These templates contain the environment configurations, as well as some simple a
 
 &nbsp;
 
-📖 Find out more about [Bunnyshell Templates](https://documentation.bunnyshell.com/docs/templates-what-are-templates) from the [Bunnyshell documentation](https://documentation.bunnyshell.com/).
+📖 Find out more about [Bunnyshell Templates](https://documentation.bunnyshell.com/docs/templates-what-are-templates)
+from the [Bunnyshell documentation](https://documentation.bunnyshell.com/).
