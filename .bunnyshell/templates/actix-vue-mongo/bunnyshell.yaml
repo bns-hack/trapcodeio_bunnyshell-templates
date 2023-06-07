@@ -12,7 +12,7 @@ components:
         context: ./
         dockerfile: .docker/Dockerfile
         args:
-          - BUILD_MODE=release
+          BUILD_MODE: release
       environment:
         APP_PORT: 9000
         MONGODB_SERVER: "mongodb://mongo/books"
