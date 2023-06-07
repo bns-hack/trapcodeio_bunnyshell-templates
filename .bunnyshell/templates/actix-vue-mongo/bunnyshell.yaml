@@ -11,8 +11,7 @@ components:
       build:
         context: ./
         dockerfile: .docker/Dockerfile
-        args:
-          BUILD_MODE: release
+        target: debug # or release
       environment:
         APP_PORT: 9000
         MONGODB_SERVER: "mongodb://mongo/books"
