@@ -13,6 +13,9 @@ components:
         dockerfile: .docker/Dockerfile
         target: dev
       environment:
+#        For some reason, there is a default bunnyshell env variable called `APP_PORT`
+#        We must override it here
+        APP_PORT: 9000
         MONGODB_SERVER: "mongodb://mongo/books"
       ports:
         - "9000:9000"
