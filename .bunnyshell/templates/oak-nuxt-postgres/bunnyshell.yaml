@@ -1,0 +1,66 @@
+kind: Environment
+name: Oak / Nuxt / PostgreSQL boilerplate
+type: primary
+components:
+  - kind: Application
+    name: api
+    gitRepo: 'https://github.com/trapcodeio/deno-oak-books-app.git'
+    gitBranch: main
+    gitApplicationPath: /
+    dockerCompose:
+      build:
+        context: ./
+        dockerfile: .docker/Dockerfile
+        target: dev
+      environment:
+        APP_PORT: 9000
+        POSTGRES_HOST: db # name of the "db" service
+        POSTGRES_DB: books
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: need-to-replace
+      ports:
+        - '9000:9000'
+    hosts:
+      - hostname: 'api-{{ env.base_domain }}'
+        path: /
+        servicePort: 9000
+  - kind: Database
+    name: db
+    dockerCompose:
+      environment:
+        POSTGRES_DB: books
+        POSTGRES_PASSWORD: need-to-replace
+        POSTGRES_USER: postgres
+      image: postgres:15.2-alpine3.17
+      ports:
+        - '5432:5432'
+    volumes:
+      - name: data-volume
+        mount: /var/lib/postgresql/data
+        subPath: ''
+      - name: data-volume
+        mount: /docker-entrypoint-initdb.d
+        subPath: ''
+
+  - kind: Application
+    name: app
+    gitRepo: "https://github.com/trapcodeio/nuxt-books-app.git"
+    gitBranch: main
+    gitApplicationPath: /
+    dockerCompose:
+      build:
+        context: ./
+        dockerfile: .docker/Dockerfile
+        target: dev
+        args:
+          VITE_API_URL: "https://{{ components.api.ingress.hosts[0] }}"
+      ports:
+        - "8080:8080"
+    hosts:
+      - hostname: 'app-{{ env.base_domain }}'
+        path: /
+        servicePort: 8080
+volumes:
+  - name: data-volume
+    size: 1Gi
+    type: disk
