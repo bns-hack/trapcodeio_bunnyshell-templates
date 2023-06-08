@@ -55,3 +55,10 @@ volumes:
   - name: data-volume
     size: 1Gi
     type: disk
+dev:
+  api:
+    - containers:
+        api:
+          resources:
+            limits:
+              memory: 1024M
