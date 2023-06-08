@@ -1,6 +1,6 @@
 #file: noinspection YAMLSchemaValidation
-name: Oak + Vue + PostgreSQL
-description: This is a boilerplate for creating a new environment using Deno, Oak, Vue+Vite (with Typescript) and Postgres. It contains a basic CRUD example to demonstrate how components connect and make it easy to start with.
+name: Oak + React + PostgreSQL
+description: This is a boilerplate for creating a new environment using Deno, Oak, React (with Typescript) and Postgres. It contains a basic CRUD example to demonstrate how components connect and make it easy to start with.
 tags: [ deno, oak, react, typescript, postgres ]
 icons: [ deno, oak, react, typescript, postgres ]
 stack:

@@ -1,5 +1,5 @@
 kind: Environment
-name: Oak / Vue / PostgreSQL boilerplate
+name: Oak / React / PostgreSQL boilerplate
 type: primary
 components:
   - kind: Application
