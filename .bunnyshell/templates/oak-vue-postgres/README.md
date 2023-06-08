@@ -308,7 +308,3 @@ You only need to configure your IDE for the Remote Environment, and this is a ma
 # Important Note
 
 You must change all passwords and review all parameters to ensure that your Environment is secure.
-
-# Source
-
-Boilerplate: [nestjs-react-mongo](https://github.com/bunnyshell/templates/blob/main/.bunnyshell/templates/nestjs-react-mongo/README.md)
