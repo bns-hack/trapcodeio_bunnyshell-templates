@@ -23,8 +23,8 @@ from the [Bunnyshell documentation](https://documentation.bunnyshell.com/).
 These templates are just mix and match of frontend and backend frameworks.
 For every backend framework, there is a frontend framework that can be used with it.
 
-| Template                                                                   | Description                                                                                   |
-|----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| [oak-vue-postgres](./.bunnyshell/templates/oak-vue-postgres/README.md)     | **Deno** backend with **Oak** and **PostgreSQL**, **Vue+Vite** frontend with **Typescript**   |
-| [oak-react-postgres](./.bunnyshell/templates/oak-react-postgres/README.md) | **Deno** backend with **Oak** and **PostgreSQL**, **React+Vite** frontend with **Typescript** |
+| Template                                                                   | Description                                                                                 |
+|----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| [oak-vue-postgres](./.bunnyshell/templates/oak-vue-postgres/README.md)     | **Deno** backend with **Oak** and **PostgreSQL**, **Vue+Vite** frontend with **Typescript** |
+| [oak-react-postgres](./.bunnyshell/templates/oak-react-postgres/README.md) | **Deno** backend with **Oak** and **PostgreSQL**, **React** frontend with **Typescript**    |
 
