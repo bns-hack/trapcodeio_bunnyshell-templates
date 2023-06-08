@@ -1,5 +1,5 @@
 kind: Environment
-name: XpresserJs / Vue / MongoDB boilerplate
+name: XpresserJs / Nuxt / MongoDB boilerplate
 type: primary
 components:
   - kind: Application
@@ -37,7 +37,7 @@ components:
         subPath: ""
   - kind: Application
     name: app
-    gitRepo: "https://github.com/trapcodeio/vue-books-app.git"
+    gitRepo: "https://github.com/trapcodeio/nuxt-books-app.git"
     gitBranch: main
     gitApplicationPath: /
     dockerCompose:
@@ -46,6 +46,7 @@ components:
         dockerfile: .docker/Dockerfile
         target: dev
         args:
+          NITRO_PORT: 8080
           VITE_API_URL: "https://{{ components.api.ingress.hosts[0] }}"
       ports:
         - "8080:8080"

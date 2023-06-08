@@ -1,7 +1,7 @@
 # Template overview
 
 This Environment [Template](https://documentation.bunnyshell.com/docs/templates-what-are-templates) is a boilerplate for
-creating a new environment based on a stack using Node.js with XpresserJs for the backend, Vue with Typescript for the
+creating a new environment based on a stack using Node.js with XpresserJs for the backend, Nuxt 3 for the
 frontend and MongoDB as the database.
 
 The template provides the Bunnyshell configuration composed of 3 Components (frontend + backend + database) and the CRUD
