@@ -1,16 +1,14 @@
-# Bunnyshell Template for fiber-vue-mongo
+# Bunnyshell Template for fiber-vue-mongodb
 
 This Environment [Template](https://documentation.bunnyshell.com/docs/templates-what-are-templates) is a boilerplate for
-creating a new environment based on a stack using Deno with Oak for the backend, Vue with Typescript for the frontend
-and PostgreSQL as the database.
+creating a new environment based on a stack using **GoLang** with **Fiber** for the backend,
+**VueJs** with **Typescript** for the frontend and MongoDB as the database.
 
 The template provides the Bunnyshell configuration composed of 3 Components (frontend + backend + database) and the CRUD
 application that demonstrates how the components work together to form an environment.
 
 You can extend the template by further adding Components, be them more APIs or other services, such as queues, caches,
 block storage etc.
-
-&nbsp;
 
 # Environment overview
 
@@ -20,8 +18,8 @@ brings together applications and all the services and databases those applicatio
 This Environment Template contains 3 components:
 
 - `app` for frontend, based on a `node` image
-- `api` for backend, also based on a `deno` image
-- `db` using a `postgres` image
+- `api` for backend, also based on a `golang` image
+- `db` using a `mongodb` image
 
 and 1 persistent volume:
 
@@ -39,8 +37,6 @@ The stage (`dev` or `prod`) can be set from the Environment's configuration (`bu
 Component's `dockerCompose.build.target` property. The default is `dev`, and it can be changed to `prod` to produce
 production-like images.
 
-
-
 # How to use this Template
 
 You can create Environments from
@@ -56,8 +52,6 @@ Remote Development.
 Staging / Testing Environments should be created with the `prod` target for images, in order to have the application
 running as it does in production.
 
-
-
 ## Staging / Testing
 
 For staging / testing purposes, the Environments just need to be deployed.
@@ -65,19 +59,18 @@ For staging / testing purposes, the Environments just need to be deployed.
 You need to ensure that the `dockerCompose.build.target` is set to `prod` for all the Components, and
 then [deploy the Environment](https://documentation.bunnyshell.com/docs/environment-workflows-deploy).
 
-
 ## Remote Development
 
 [Remote Development](https://documentation.bunnyshell.com/docs/remote-development) allows you to develop directly in a
 cloud environment, therefore eliminating all inconsistencies and approximations of traditional local environments.
 
-The code is ran in a container running in Kubernetes, and you can choose one of two ways to work, depending whether you
+The code is run in a container running in Kubernetes, and you can choose one of two ways to work, depending on whether you
 prefer to keep a local copy of the code or not.
 
 1. You can have the code existing **only in the container** - you will need an IDE capable of connecting via SSH to
-   install a headless IDE in the container, eg. VS Code or the JetBrains suite.
+   install a headless IDE in the container, e.g., VS Code or the JetBrains suite.
 
-2. You can have the code existing **on your device** and it will be synchronized into the container - any IDE or plain
+2. You can have the code existing **on your device** and it will be synchronized into the container, any IDE or plain
    text editor will do.
 
 📖 For more information on how Remote Development works in Bunnyshell, please see
@@ -131,21 +124,22 @@ You need to provide 2 additional paths:
 After starting the Remote Development session, the Bunnyshell CLI opens a shell into the container. From it, you can run
 any application-related command you would run on local.  
 Please note that **you must start the application** manually, as you may need to start the application in a number of
-ways, eg. with or without debugging.
+ways, e.g., with or without debugging.
 
 ```
 $ bns remote-development up --component {YOUR_COMPONENT_ID}
 ? Local Path {YOUR_OWN_LOCAL_PATH}}
 ? Remote Path /usr/src/app
-/usr/src/app # deno task dev
+/usr/src/app # bash dev.sh
 ```
+
+`dev.sh` contains a script to start the application in development mode, with file watching using the `air` package.
 
 📖 For more information on starting a remote Development session, please see:
 
 - [How to Start Remote Development](https://documentation.bunnyshell.com/docs/remote-development-start)
     - [with local files](https://documentation.bunnyshell.com/docs/remote-development-local-files)
 
-&nbsp;
 
 #### Working with code from the container
 
@@ -176,8 +170,15 @@ Please note that using the Terminal from the IDE, **you must start the applicati
 the application in a number of ways, eg. with or without debugging.
 
 ```
-/usr/src/app # deno task dev
+/usr/src/app # bash dev.sh
 ```
+
+Note: In some cases when using `--sync-mode none` and vscode remote development, `go` may not be found. all you need todo is to add the `go` binary to your path:
+```bash
+export PATH=$PATH:/usr/local/go/bin
+```
+This should set the path for the current session. If you want to make it permanent, you can add it to your `.bashrc` file.
+
 
 📖 For more information on starting a remote Development session, please see:
 
@@ -207,89 +208,6 @@ select *Remote Development*. Then, you just need to replace `up` with `down.
 📖 For more information on stopping a remote Development session, please see:
 
 - [Stop Remote Development](https://documentation.bunnyshell.com/docs/remote-development-stop)
-
-&nbsp;
-
-### Debugging in a Remote Development session
-
-You can debug your code even if it's running in a container in Kubernetes, just like you would on your local machine:
-use breakpoints, control the flow of execution, see variable values and call stacks etc.
-
-The configuration differs based on the way you chose to work, and also on your IDE of choice.
-
-&nbsp;
-
-#### Debugging backend with code from your machine
-
-When debugging with local code, you need to:
-
-1. start the Remote Development session with port-forwarding on the debugger's port (`9229` for `deno`)
-2. start the deno process with debug enabled (eg. run `deno task debug`) in the shell you're left in after the `bns remote-development up`
-   command finishes
-3. [set up the IDE with a debugging configuration](https://documentation.bunnyshell.com/docs/remote-development-debugging-deno#setting-up-the-ide)
-   on the debuggers port (`9229` for `deno`)
-4. define a file mapping (local to remote) for the IDE configuration (eg. `{YOUR_OWN_LOCAL_PATH}}`
-   to `/usr/src/app`)
-5. start the debug process from your IDE
-
-For the `api` service, you need to run:
-
-```
-$ bns remote-development up --port-forward "9000>9000,9229>9229"
-? Local Path {YOUR_OWN_LOCAL_PATH}}
-? Remote Path /usr/src/app
-/usr/src/app # deno task debug
-```
-
-💡 Remember that you can pass in the optional flag `--component {YOUR_COMPONENT_ID}` to skip running the wizard to choose
-the Component.
-
-You can now add breakpoints and start debugging.
-
-📖 For more information on debugging locally, please see:
-
-- [Debugging locally with port forwarding](https://documentation.bunnyshell.com/docs/remote-development-debugging)
-    - [Debugging deno](https://deno.com/manual@v1.0.0/tools/debugger) for both `app`
-      and `api`
-
-
-#### Debugging backend with code from the container
-
-When debugging with remote code, you need to:
-
-1. have the necessary libraries installed in the container image:
-   see [Prepare the container image](https://documentation.bunnyshell.com/docs/remote-development-configure-vs-code-pre-requisites#prepare-the-container-image)
-2. install the necessary IDE extensions (if any):
-   see [Prepare VS Code Extensions](https://documentation.bunnyshell.com/docs/remote-development-configure-vs-code-pre-requisites#prepare-vs-code-extensions)
-3. start the Remote Development session with no code sync, `--sync-mode none` and (optionally) without an interactive
-   shell once the preparation is done `--no-tty` (See "Working with code from the container" from the current Template
-   description)
-4. [configure the IDE SSH connection](https://documentation.bunnyshell.com/docs/remote-development-configure-vs-code-connection)
-
-For the `api` service, you need to run:
-
-```
-$ bns remote-development up --sync-mode none --no-tty
-? Remote Path /usr/src/app
-Pod is ready for Remote Development.
-You can find the SSH Config file in /Users/myuser/.bunnyshell/remote-dev/ssh-config
-```
-
-💡 Remember that you can pass in the optional flag `--component {YOUR_COMPONENT_ID}` to skip running the wizard to choose
-the Component.
-
-And within the IDE terminal, you need to start the `deno` process with debugging capabilities:
-
-```
-/usr/src/app # deno task debug
-```
-
-You can now add breakpoints and start debugging.
-
-📖 For more information on debugging remotely, please see:
-
-- [Debugging remotely with VS Code](https://documentation.bunnyshell.com/docs/remote-development-configure-vs-code)
-
 
 
 #### Debugging frontend
