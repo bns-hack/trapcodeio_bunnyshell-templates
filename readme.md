@@ -9,14 +9,16 @@ These templates contain the environment configurations, as well as some simple a
 📖 Find out more about [Bunnyshell Templates](https://documentation.bunnyshell.com/docs/templates-what-are-templates)
 from the [Bunnyshell documentation](https://documentation.bunnyshell.com/).
 
-
 ## Featured Repositories
+
 ##### Frontend
+
 - [Vue Books App](https://github.com/trapcodeio/vue-books-app)
 - [Nuxt Books App](https://github.com/trapcodeio/nuxt-books-app)
 - [React Books App](https://github.com/bunnyshell/templates/tree/main/components/react-books-app) (Borrowed)
 
 ##### Backend
+
 - [Deno Oak Books App](https://github.com/trapcodeio/deno-oak-books-app)
 - [NodeJS Xpresser Books App](https://github.com/trapcodeio/xpresser-books-app)
 - [Golang Fiber Books App](https://github.com/trapcodeio/golang-fiber-books-app)
