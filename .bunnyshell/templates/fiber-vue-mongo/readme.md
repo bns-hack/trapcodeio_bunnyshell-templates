@@ -113,6 +113,8 @@ When working with code stored locally (the default mode), you just need to run:
 bns remote-development up
 ```
 
+
+
 You need to provide 2 additional paths:
 
 - the *local path*, for your local code files
