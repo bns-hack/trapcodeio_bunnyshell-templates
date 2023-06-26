@@ -17,12 +17,12 @@ components:
         MONGODB_SERVER: "mongodb://mongo/books"
       ports:
         - "9000:9000"
-      deploy:
-        resources:
-          limits:
-            memory: 1G
-          reservations:
-            memory: 1G
+#      deploy:
+#        resources:
+#          limits:
+#            memory: 1G
+#          reservations:
+#            memory: 1G
     hosts:
       - hostname: "api-{{ env.base_domain }}"
         path: /
