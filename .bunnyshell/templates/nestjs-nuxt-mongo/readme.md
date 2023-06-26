@@ -318,5 +318,5 @@ You must change all passwords and review all parameters to ensure that your Envi
 
 # Source
 
-Boilerplate: [nestjs-react-mongo](https://github.com/bunnyshell/templates/blob/main/.bunnyshell/templates/nestjs-react-mongo/README.md)
+Boilerplate: [nestjs-react-mongo](https://github.com/bunnyshell/templates/blob/main/.bunnyshell/templates/nestjs-react-mongo/readme.md)
 

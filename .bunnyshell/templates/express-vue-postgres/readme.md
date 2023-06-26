@@ -1,8 +1,8 @@
 # Template overview
 
 This Environment [Template](https://documentation.bunnyshell.com/docs/templates-what-are-templates) is a boilerplate for
-creating a new environment based on a stack using Node.js with XpresserJs for the backend, Nuxt 3 for the
-frontend and MongoDB as the database.
+creating a new environment based on a stack using Node.js with Express for the backend, Vue with Typescript for the
+frontend and PostgreSQL as the database.
 
 The template provides the Bunnyshell configuration composed of 3 Components (frontend + backend + database) and the CRUD
 application that demonstrates how the components work together to form an environment.
@@ -15,13 +15,13 @@ block storage etc.
 # Environment overview
 
 An [Environment in Bunnyshell](https://documentation.bunnyshell.com/docs/environments) is a user-defined group that
-brings together applications and all the services and databases those applications require.
+brings together applications and all of the services and databases those applications require.
 
 This Environment Template contains 3 components:
 
 - `app` for frontend, based on a `node` image
 - `api` for backend, also based on a `node` image
-- `db` using a `mongodb` image
+- `db` using a `postgres` image
 
 and 1 persistent volume:
 
@@ -125,7 +125,7 @@ You need to provide 2 additional paths:
 
 - the *local path*, for your local code files
 - the *remote path*: the path where code files are located within the container (you can find this out from
-  the `Dockerfile`, it's in the `WORKDIR` statement); for the `backend` application, it is `/app`.
+  the `Dockerfile`, it's in the `WORKDIR` statement); for the `backend` application, it is `/usr/src/app/backend`.
 
 💡 The wizard will require these from you, but you can also provide them as options, `-l` and `-r` respectively.
 
@@ -137,8 +137,8 @@ ways, eg. with or without debugging.
 ```
 $ bns remote-development up --component {YOUR_COMPONENT_ID}
 ? Local Path {YOUR_OWN_LOCAL_PATH}}
-? Remote Path /app
-/app # yarn run ts-dev
+? Remote Path /usr/src/app/backend
+/usr/src/app/backend # npm run start:dev
 ```
 
 📖 For more information on starting a remote Development session, please see:
@@ -156,13 +156,13 @@ also want to pass in `--no-tty`, to disable leaving an SSH terminal into the con
 on your preferences.
 
 You need to provide the *remote path*: the path where code files are located within the container (you can find this out
-from the `Dockerfile`, it's in the `WORKDIR` statement); for the `api` application, it is `/app`.
+from the `Dockerfile`, it's in the `WORKDIR` statement); for the `api` application, it is `/usr/src/app/backend`.
 
 💡 The wizard will require this from you, but you can also provide it as an option, using `-r`.
 
 ```
 bns remote-development up --sync-mode none --no-tty
-? Remote Path /app
+? Remote Path /usr/src/app/backend
 Pod is ready for Remote Development.
 You can find the SSH Config file in /Users/myuser/.bunnyshell/remote-dev/ssh-config
 ```
@@ -177,7 +177,7 @@ Please note that using the Terminal from the IDE, **you must start the applicati
 the application in a number of ways, eg. with or without debugging.
 
 ```
-/app # yarn run ts-dev
+/usr/src/app/backend # npm run start:dev
 ```
 
 📖 For more information on starting a remote Development session, please see:
@@ -225,11 +225,12 @@ The configuration differs based on the way you chose to work, and also on your I
 When debugging with local code, you need to:
 
 1. start the Remote Development session with port-forwarding on the debugger's port (`9229` for `nodemon`)
-2. start the node process (eg. run `yarn run ts-dev`) in the shell you're left in after the `bns remote-development up`
-   command finishes
+2. start the node process (eg. run `npm run start:dev`) in the shell you're left in after
+   the `bns remote-development up` command finishes
 3. [set up the IDE with a debugging configuration](https://documentation.bunnyshell.com/docs/remote-development-debugging-nodejs#setting-up-the-ide)
    on the debugger's port (`9229` for `nodemon`)
-4. define a file mapping (local to remote) for the IDE configuration (eg. `{YOUR_OWN_LOCAL_PATH}}` to `/app`)
+4. define a file mapping (local to remote) for the IDE configuration (eg. `{YOUR_OWN_LOCAL_PATH}}`
+   to `/usr/src/app/backend`)
 5. start the debug process from your IDE
 
 For the `api` service, you need to run:
@@ -237,8 +238,8 @@ For the `api` service, you need to run:
 ```
 $ bns remote-development up --port-forward "9229>9229"
 ? Local Path {YOUR_OWN_LOCAL_PATH}}
-? Remote Path /app
-/app # yarn run ts-dev
+? Remote Path /usr/src/app/backend
+/usr/src/app/backend # npm run start:dev
 ```
 
 💡 Remember that you can pass in the optional flag `--component {YOUR_COMPONENT_ID}` to skip running the wizard to choose
@@ -272,7 +273,7 @@ For the `api` service, you need to run:
 
 ```
 $ bns remote-development up --sync-mode none --no-tty
-? Remote Path /app
+? Remote Path /usr/src/app/backend
 Pod is ready for Remote Development.
 You can find the SSH Config file in /Users/myuser/.bunnyshell/remote-dev/ssh-config
 ```
@@ -283,7 +284,7 @@ the Component.
 And within the IDE terminal, you need to start the `node` process with debugging capabilities:
 
 ```
-/app # yarn run ts-dev
+/usr/src/app/backend # npm run start:dev
 ```
 
 You can now add breakpoints and start debugging.
@@ -317,4 +318,4 @@ You must change all passwords and review all parameters to ensure that your Envi
 
 # Source
 
-Boilerplate: [nestjs-react-mongo](https://github.com/bunnyshell/templates/blob/main/.bunnyshell/templates/nestjs-react-mongo/README.md)
+Boilerplate: [express-react-mongo](https://github.com/bunnyshell/templates/blob/main/.bunnyshell/templates/express-react-mongo/readme.md)
