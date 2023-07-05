@@ -1,0 +1,12 @@
+#file: noinspection YAMLSchemaValidation
+name: MeiSearch Cloud
+description: This is a boilerplate for creating a new environment for MeiliSearch Cloud.
+tags: [ rust, meilisearch ]
+icons: [ rust, meilisearch ]
+stack:
+  packages:
+    - name: Rust
+      version: "1.68"
+    - name: MeiliSearch
+      version: '1.2.0'
+discoverable: true
