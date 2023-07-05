@@ -15,6 +15,12 @@ components:
         MASTER_KEY: 'default_master_key'
       ports:
         - '7700:7700'
+      deploy:
+        resources:
+          limits:
+            memory: 1G
+          reservations:
+            memory: 1G
     hosts:
       - hostname: 'api-{{ env.base_domain }}'
         path: /
