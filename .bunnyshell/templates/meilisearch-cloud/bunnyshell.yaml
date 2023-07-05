@@ -11,7 +11,7 @@ components:
       build:
         context: ./components/meilisearch-cloud
         dockerfile: Dockerfile
-        target: prod
+        target: dev
       environment:
         MEILI_MASTER_KEY: 'default_master_key'
         MEILI_HTTP_ADDR: '0.0.0.0:7700'
