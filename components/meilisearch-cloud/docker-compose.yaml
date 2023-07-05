@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  meilisearch:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      target: dev
+    ports:
+      - "7700:7700"
+    environment:
+      - MEILI_MASTER_KEY=default_master_key
+      - MEILI_HTTP_ADDR=0.0.0.0:7700
+    volumes:
+      - meilisearch-data:/usr/src/meilisearch
+
+volumes:
+  meilisearch-data:
