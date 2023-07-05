@@ -9,7 +9,7 @@ components:
     gitApplicationPath: components/meilisearch-cloud
     dockerCompose:
       build:
-        context: ./
+        context: ./components/meilisearch-cloud
         dockerfile: Dockerfile
       environment:
         MASTER_KEY: 'default_master_key'
