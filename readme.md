@@ -37,11 +37,8 @@ from the [Bunnyshell documentation](https://documentation.bunnyshell.com/).
 These templates are just mix and match of frontend and backend frameworks.
 For every backend framework, there is a frontend framework that can be used with it.
 
-| Template                                                                       | Description                                                                                       |
-|--------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
-| [express-vue-postgres](./.bunnyshell/templates/express-vue-postgres/readme.md) | **NodeJS** backend with **Express** and **PostgreSQL**, **Vue+Vite** frontend with **Typescript** |
-| [nestjs-nuxt-mongodb](./.bunnyshell/templates/nestjs-nuxt-mongo/readme.md)     | **NodeJS** backend with **NestJS** and **MongoDB**, **Nuxt 3** frontend with **Typescript**       |
-| [nestjs-vue-mongodb](./.bunnyshell/templates/nestjs-vue-mongo/readme.md)       | **NodeJS** backend with **NestJS** and **MongoDB**, **Vue+Vite** frontend with **Typescript**     |
-| [oak-vue-postgres](./.bunnyshell/templates/oak-vue-postgres/readme.md)         | **Deno** backend with **Oak** and **PostgreSQL**, **Vue+Vite** frontend with **Typescript**       |
-| [oak-react-postgres](./.bunnyshell/templates/oak-react-postgres/readme.md)     | **Deno** backend with **Oak** and **PostgreSQL**, **React** frontend with **Typescript**          |
-| [xpresser-nuxt-mongodb](./.bunnyshell/templates/xpresser-nuxt-mongo/readme.md) | **NodeJS** backend with **Xpresser** and **MongoDB**, **Nuxt 3** frontend with **Typescript**     |
+| Template                                                                       | Description                                                                                   |
+|--------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| [oak-vue-postgres](./.bunnyshell/templates/oak-vue-postgres/readme.md)         | **Deno** backend with **Oak** and **PostgreSQL**, **Vue+Vite** frontend with **Typescript**   |
+| [oak-react-postgres](./.bunnyshell/templates/oak-react-postgres/readme.md)     | **Deno** backend with **Oak** and **PostgreSQL**, **React** frontend with **Typescript**      |
+| [xpresser-nuxt-mongodb](./.bunnyshell/templates/xpresser-nuxt-mongo/readme.md) | **NodeJS** backend with **Xpresser** and **MongoDB**, **Nuxt 3** frontend with **Typescript** |

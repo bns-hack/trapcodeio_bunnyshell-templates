@@ -1,0 +1,21 @@
+kind: Environment
+name: MeiliSearch Cloud
+type: primary
+components:
+  - kind: Application
+    name: api
+    gitRepo: 'https://github.com/trapcodeio/bunnyshell-templates.git'
+    gitBranch: main
+    gitApplicationPath: components/meilisearch-cloud
+    dockerCompose:
+      build:
+        context: ./
+        dockerfile: ./Dockerfile
+      environment:
+        MASTER_KEY: 'default_master_key'
+      ports:
+        - '7700:7700'
+    hosts:
+      - hostname: 'api-{{ env.base_domain }}'
+        path: /
+        servicePort: 7700
