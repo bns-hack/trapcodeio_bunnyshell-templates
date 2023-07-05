@@ -14,4 +14,4 @@ RUN curl -L https://install.meilisearch.com | sh
 EXPOSE 7700
 
 # Start Meilisearch when the container is run
-CMD ["./meilisearch"]
+CMD ./meilisearch --master-key"$MASTER_KEY"
