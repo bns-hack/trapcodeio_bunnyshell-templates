@@ -12,7 +12,8 @@ components:
         context: ./components/meilisearch-cloud
         dockerfile: Dockerfile
       environment:
-        MASTER_KEY: 'default_master_key'
+        MEILI_MASTER_KEY: 'default_master_key'
+        MEILI_HTTP_ADDR: '0.0.0.0:7700'
       ports:
         - '7700:7700'
       deploy:
