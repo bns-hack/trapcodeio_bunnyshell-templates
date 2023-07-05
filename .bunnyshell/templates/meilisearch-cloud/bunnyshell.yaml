@@ -24,6 +24,6 @@ components:
           reservations:
             memory: 1G
     hosts:
-      - hostname: 'api-{{ env.base_domain }}'
+      - hostname: 'search-{{ env.base_domain }}'
         path: /
         servicePort: 7700
