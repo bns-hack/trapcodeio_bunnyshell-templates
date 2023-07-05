@@ -3,7 +3,7 @@ name: MeiliSearch Cloud
 type: primary
 components:
   - kind: Application
-    name: api
+    name: meilisearch
     gitRepo: 'https://github.com/trapcodeio/bunnyshell-templates.git'
     gitBranch: main
     gitApplicationPath: components/meilisearch-cloud
