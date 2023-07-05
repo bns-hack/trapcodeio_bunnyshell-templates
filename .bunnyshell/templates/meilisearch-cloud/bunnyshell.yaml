@@ -10,7 +10,7 @@ components:
     dockerCompose:
       build:
         context: ./
-        dockerfile: ./Dockerfile
+        dockerfile: Dockerfile
       environment:
         MASTER_KEY: 'default_master_key'
       ports:
