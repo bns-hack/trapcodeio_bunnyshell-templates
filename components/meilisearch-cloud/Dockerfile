@@ -19,10 +19,6 @@ WORKDIR /usr/src/meilisearch
 # Copy the Meilisearch binary from the builder stage
 COPY --from=build /usr/src/meilisearch/meilisearch ./meilisearch
 
-# Set a default value for MASTER_KEY and MEILI_HTTP_ADDR
-ENV MEILI_MASTER_KEY=default_master_key
-ENV MEILI_HTTP_ADDR=0.0.0.0:7700
-
 # Expose the port that Meilisearch uses
 EXPOSE 7700
 
@@ -38,9 +34,6 @@ WORKDIR /usr/src/meilisearch
 # Copy the Meilisearch binary from the builder stage
 COPY --from=build /usr/src/meilisearch/meilisearch ./meilisearch
 
-# Set a default value for MASTER_KEY and MEILI_HTTP_ADDR, and set MEILI_ENV to 'production'
-ENV MEILI_MASTER_KEY=default_master_key
-ENV MEILI_HTTP_ADDR=0.0.0.0:7700
 ENV MEILI_ENV=production
 
 # Expose the port that Meilisearch uses
