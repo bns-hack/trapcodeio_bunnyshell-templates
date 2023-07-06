@@ -13,10 +13,10 @@ components:
         dockerfile: Dockerfile
         target: dev
       environment:
-        MEILI_MASTER_KEY: 'default_master_key'
-        MEILI_HTTP_ADDR: '0.0.0.0:7700'
+        MEILI_MASTER_KEY: "default_master_key"
+        MEILI_HTTP_ADDR: "0.0.0.0:7700"
       ports:
-        - '7700:7700'
+        - "7700:7700"
       deploy:
         resources:
           limits:
@@ -24,6 +24,30 @@ components:
           reservations:
             memory: 1G
     hosts:
-      - hostname: 'search-{{ env.base_domain }}'
+      - hostname: "search-{{ env.base_domain }}"
         path: /
         servicePort: 7700
+
+  - kind: Application
+    name: demo
+    gitRepo: "https://github.com/trapcodeio/bunnyshell-templates.git"
+    gitBranch: main
+    gitApplicationPath: components/meilisearch-cloud/demo
+    dockerCompose:
+      build:
+        context: ./
+        dockerfile: Dockerfile
+        environment:
+          MEILISEARCH_HOST: "meilisearch:7700"
+          MEILISEARCH_EXTERNAL_HOST: "https://{{ components.meilisearch.ingress.hosts[0] }}"
+          MEILISEARCH_ADMIN_API_KEY: "default_master_key"
+          MEILISEARCH_SEARCH_API_KEY: "default_master_key"
+          TWICPICS_DOMAIN: "https://meilisearch-ecommerce.twic.pics"
+          STORYBOOK_TWICPICS_DOMAIN: "https://meilisearch-ecommerce.twic.pics"
+
+      ports:
+        - "8080:8080"
+    hosts:
+      - hostname: 'demo-{{ env.base_domain }}'
+        path: /
+        servicePort: 8080
