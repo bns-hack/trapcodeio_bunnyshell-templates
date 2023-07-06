@@ -37,17 +37,16 @@ components:
       build:
         context: ./
         dockerfile: Dockerfile
-        environment:
-          MEILISEARCH_HOST: "meilisearch:7700"
-          MEILISEARCH_EXTERNAL_HOST: "https://{{ components.meilisearch.ingress.hosts[0] }}"
-          MEILISEARCH_ADMIN_API_KEY: "default_master_key"
-          MEILISEARCH_SEARCH_API_KEY: "default_master_key"
-          TWICPICS_DOMAIN: "https://meilisearch-ecommerce.twic.pics"
-          STORYBOOK_TWICPICS_DOMAIN: "https://meilisearch-ecommerce.twic.pics"
-
+      environment:
+        MEILISEARCH_HOST: "meilisearch:7700"
+        MEILISEARCH_EXTERNAL_HOST: "https://{{ components.meilisearch.ingress.hosts[0] }}"
+        MEILISEARCH_ADMIN_API_KEY: "default_master_key"
+        MEILISEARCH_SEARCH_API_KEY: "default_master_key"
+        TWICPICS_DOMAIN: "https://meilisearch-ecommerce.twic.pics"
+        STORYBOOK_TWICPICS_DOMAIN: "https://meilisearch-ecommerce.twic.pics"
       ports:
-        - "8080:8080"
+        - "3000:3000"
     hosts:
       - hostname: 'demo-{{ env.base_domain }}'
         path: /
-        servicePort: 8080
+        servicePort: 3000
