@@ -18,12 +18,15 @@ ENV STORYBOOK_TWICPICS_DOMAIN="https://meilisearch-ecommerce.twic.pics"
 
 RUN yarn install
 
+COPY ./start-nuxt.sh .
+RUN chmod +x ./start-nuxt.sh
+
 # setup
 
 # Expose the application on port 3000
 EXPOSE 3000
 
 # Start the application
-CMD sleep 5 && yarn run setup && yarn run dev
+CMD ["./start-nuxt.sh"]
 
 

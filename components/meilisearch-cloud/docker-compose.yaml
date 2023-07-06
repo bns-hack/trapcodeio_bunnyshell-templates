@@ -10,7 +10,7 @@ services:
       - "7700:7700"
     environment:
       - MEILI_MASTER_KEY=default_master_key
-      - MEILI_HTTP_ADDR=127.0.0.1:7700
+      - MEILI_HTTP_ADDR=0.0.0.0:7700
     volumes:
       - meilisearch-data:/usr/src/meilisearch
   ecommerce:
@@ -20,7 +20,8 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - MEILISEARCH_HOST=127.0.0.1:7700
+      - MEILISEARCH_HOST=meilisearch:7700
+      - MEILISEARCH_EXTERNAL_HOST=http://localhost:7700
       - MEILISEARCH_ADMIN_API_KEY=default_master_key
       - MEILISEARCH_SEARCH_API_KEY=default_master_key
       - TWICPICS_DOMAIN=https://meilisearch-ecommerce.twic.pics
