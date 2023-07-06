@@ -35,7 +35,7 @@ components:
     gitApplicationPath: components/meilisearch-cloud/demo
     dockerCompose:
       build:
-        context: ./
+        context: ./components/meilisearch-cloud/demo
         dockerfile: Dockerfile
       environment:
         MEILISEARCH_HOST: "meilisearch:7700"
