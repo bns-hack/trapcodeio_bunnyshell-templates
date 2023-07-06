@@ -10,9 +10,26 @@ services:
       - "7700:7700"
     environment:
       - MEILI_MASTER_KEY=default_master_key
-      - MEILI_HTTP_ADDR=0.0.0.0:7700
+      - MEILI_HTTP_ADDR=127.0.0.1:7700
     volumes:
       - meilisearch-data:/usr/src/meilisearch
+  ecommerce:
+    build:
+      context: ./demo
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - MEILISEARCH_HOST=127.0.0.1:7700
+      - MEILISEARCH_ADMIN_API_KEY=default_master_key
+      - MEILISEARCH_SEARCH_API_KEY=default_master_key
+      - TWICPICS_DOMAIN=https://meilisearch-ecommerce.twic.pics
+      - STORYBOOK_TWICPICS_DOMAIN=https://meilisearch-ecommerce.twic.pics
+    volumes:
+      - /usr/src/app/node_modules
+    depends_on:
+        - meilisearch
 
 volumes:
   meilisearch-data:
+
