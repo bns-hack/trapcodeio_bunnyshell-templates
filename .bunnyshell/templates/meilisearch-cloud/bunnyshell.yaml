@@ -39,7 +39,7 @@ components:
         dockerfile: Dockerfile
         target: dev
       environment:
-        MEILISEARCH_HOST: "meilisearch:7700"
+        MEILISEARCH_HOST: "https://{{ components.meilisearch.ingress.hosts[0] }}"
         MEILISEARCH_NUXT_HOST: "https://{{ components.meilisearch.ingress.hosts[0] }}"
         MEILISEARCH_ADMIN_API_KEY: "default_master_key"
         MEILISEARCH_SEARCH_API_KEY: "default_master_key"
