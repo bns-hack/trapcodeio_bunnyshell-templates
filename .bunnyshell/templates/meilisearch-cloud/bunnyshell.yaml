@@ -17,12 +17,6 @@ components:
         MEILI_HTTP_ADDR: "0.0.0.0:7700"
       ports:
         - "7700:7700"
-      deploy:
-        resources:
-          limits:
-            memory: 1G
-          reservations:
-            memory: 1G
     hosts:
       - hostname: "search-{{ env.base_domain }}"
         path: /

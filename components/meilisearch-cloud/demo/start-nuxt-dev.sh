@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # sleep for 5 seconds to wait for meilisearch to start
-sleep 5
+sleep 10
 
 # Setup
 echo "Setup with MEILISEARCH_HOST=$MEILISEARCH_HOST"
