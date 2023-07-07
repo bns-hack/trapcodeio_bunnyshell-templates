@@ -4,6 +4,7 @@
 sleep 5
 
 # Setup
+echo "Run with MEILISEARCH_HOST=$MEILISEARCH_HOST"
 yarn run setup
 
 # change env variables because nuxt can't access `meilisearch:7700` host
