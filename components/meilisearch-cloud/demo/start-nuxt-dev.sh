@@ -8,7 +8,7 @@ echo "Run with MEILISEARCH_HOST=$MEILISEARCH_HOST"
 yarn run setup
 
 # change env variables because nuxt can't access `meilisearch:7700` host
-export MEILISEARCH_HOST=$MEILISEARCH_EXTERNAL_HOST
+export MEILISEARCH_HOST=$MEILISEARCH_NUXT_HOST
 echo "Build with MEILISEARCH_HOST=$MEILISEARCH_HOST"
 
 # yarn run preview

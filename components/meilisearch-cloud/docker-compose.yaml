@@ -22,7 +22,7 @@ services:
       - "3000:3000"
     environment:
       - MEILISEARCH_HOST=meilisearch:7700
-      - MEILISEARCH_EXTERNAL_HOST=http://localhost:7700
+      - MEILISEARCH_NUXT_HOST=http://localhost:7700
       - MEILISEARCH_ADMIN_API_KEY=default_master_key
       - MEILISEARCH_SEARCH_API_KEY=default_master_key
       - TWICPICS_DOMAIN=https://meilisearch-ecommerce.twic.pics
