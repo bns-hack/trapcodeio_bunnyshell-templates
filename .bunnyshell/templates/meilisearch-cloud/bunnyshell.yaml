@@ -37,6 +37,7 @@ components:
       build:
         context: ./components/meilisearch-cloud/demo
         dockerfile: Dockerfile
+        target: dev
       environment:
         MEILISEARCH_HOST: "meilisearch:7700"
         MEILISEARCH_EXTERNAL_HOST: "https://{{ components.meilisearch.ingress.hosts[0] }}"
