@@ -31,4 +31,4 @@ from the [Bunnyshell documentation](https://documentation.bunnyshell.com/).
 | [fiber-vue-mongodb](./.bunnyshell/templates/fiber-vue-mongo/README.md)        | **Golang** backend with **Fiber** and **MongoDB**, **Vue+Vite** frontend with **Typescript**    |
 | [oak-nuxt-postgres](./.bunnyshell/templates/oak-nuxt-postgres/README.md)      | **Deno** backend with **Oak** and **PostgreSQL**, **Nuxt 3** frontend with **Typescript**       |
 | [xpresser-vue-mongodb](./.bunnyshell/templates/xpresser-nuxt-mongo/README.md) | **NodeJS** backend with **Xpresser** and **MongoDB**, **Vue+Vite** frontend with **Typescript** |
-| [meilisearch-cloud](./.bunnyshell/templates/meilisearch-cloud/README.md)      | **Meilisearch** as a service                                                                    |
+| [meilisearch-cloud](./.bunnyshell/templates/meilisearch-cloud/README.md)      | **Meilisearch** as a service.                                                                   |
