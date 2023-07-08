@@ -20,6 +20,12 @@ components:
         POSTGRES_PASSWORD: need-to-replace
       ports:
         - '9000:9000'
+      deploy:
+        resources:
+          limits:
+            memory: 1G
+          reservations:
+            memory: 1G
     hosts:
       - hostname: 'api-{{ env.base_domain }}'
         path: /

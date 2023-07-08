@@ -113,13 +113,13 @@ You need to provide 2 additional paths:
 After starting the Remote Development session, the Bunnyshell CLI opens a shell into the container. From it, you can run
 any application-related command you would run on local.  
 Please note that **you must start the application** manually, as you may need to start the application in a number of
-ways, eg. with or without debugging.
+ways, eg. With or without debugging.
 
 ```
 $ bns remote-development up --component {YOUR_COMPONENT_ID}
 ? Local Path {YOUR_OWN_LOCAL_PATH}}
-? Remote Path /app
-/app # yarn run ts-dev
+? Remote Path /usr/src/app
+/usr/src/app # yarn run ts-dev
 ```
 
 📖 For more information on starting a remote Development session, please see:
