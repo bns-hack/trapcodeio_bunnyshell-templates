@@ -125,8 +125,17 @@ You need to provide 2 additional paths:
 
 After starting the Remote Development session, the Bunnyshell CLI opens a shell into the container. From it, you can run
 any application-related command you would run on local.  
+
 Please note that **you must start the application** manually, as you may need to start the application in a number of
 ways, e.g., with or without debugging.
+
+Also Note that in some cases when using `--sync-mode none` and vscode remote development, `go` may not be found. All you need todo is to add the `go` binary to your path:
+```bash
+export PATH=$PATH:/usr/local/go/bin
+```
+
+This should set the path for the current session. If you want to make it permanent, you can add it to your `.bashrc` file.
+
 
 ```
 $ bns remote-development up --component {YOUR_COMPONENT_ID}
@@ -174,12 +183,6 @@ the application in a number of ways, eg. with or without debugging.
 ```
 /usr/src/app # bash dev.sh
 ```
-
-Note: In some cases when using `--sync-mode none` and vscode remote development, `go` may not be found. all you need todo is to add the `go` binary to your path:
-```bash
-export PATH=$PATH:/usr/local/go/bin
-```
-This should set the path for the current session. If you want to make it permanent, you can add it to your `.bashrc` file.
 
 
 📖 For more information on starting a remote Development session, please see:

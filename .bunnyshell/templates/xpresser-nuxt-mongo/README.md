@@ -158,7 +158,7 @@ Please note that using the Terminal from the IDE, **you must start the applicati
 the application in a number of ways, eg. with or without debugging.
 
 ```
-/app # yarn run ts-dev
+/app # yarn run dev
 ```
 
 📖 For more information on starting a remote Development session, please see:
