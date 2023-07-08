@@ -127,14 +127,6 @@ any application-related command you would run on local.
 Please note that **you must start the application** manually, as you may need to start the application in a number of
 ways, e.g., with or without debugging.
 
-Also Note that in some cases when using `--sync-mode none` and vscode remote development, `go` may not be found. All you need todo is to add the `go` binary to your path:
-```bash
-export PATH=$PATH:/usr/local/go/bin
-```
-
-This should set the path for the current session. If you want to make it permanent, you can add it to your `.bashrc` file.
-
-
 ```
 $ bns remote-development up --component {YOUR_COMPONENT_ID}
 ? Local Path {YOUR_OWN_LOCAL_PATH}}
@@ -142,7 +134,7 @@ $ bns remote-development up --component {YOUR_COMPONENT_ID}
 /usr/src/app # bash dev.sh
 ```
 
-`dev.sh` contains a script to start the application in development mode, with file watching using the `air` package.
+`dev.sh` contains a script to start the application in development mode, with file watching using the `cargo watch ` command.
 
 📖 For more information on starting a remote Development session, please see:
 
