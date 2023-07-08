@@ -17,10 +17,11 @@ from the [Bunnyshell documentation](https://documentation.bunnyshell.com/).
 
 ##### Backend
 
+- [Rust Actix Books App](https://github.com/trapcodeio/rust-actix-books-app)
+- [Golang Fiber Books App](https://github.com/trapcodeio/golang-fiber-books-app)
 - [Deno Oak Books App](https://github.com/trapcodeio/deno-oak-books-app)
 - [NodeJS Xpresser Books App](https://github.com/trapcodeio/xpresser-books-app)
-- [Golang Fiber Books App](https://github.com/trapcodeio/golang-fiber-books-app)
-- [Rust Actix Books App](https://github.com/trapcodeio/rust-actix-books-app)
+
 
 ## Templates
 
@@ -30,3 +31,4 @@ from the [Bunnyshell documentation](https://documentation.bunnyshell.com/).
 | [fiber-vue-mongodb](./.bunnyshell/templates/fiber-vue-mongo/README.md)        | **Golang** backend with **Fiber** and **MongoDB**, **Vue+Vite** frontend with **Typescript**    |
 | [oak-nuxt-postgres](./.bunnyshell/templates/oak-nuxt-postgres/README.md)      | **Deno** backend with **Oak** and **PostgreSQL**, **Nuxt 3** frontend with **Typescript**       |
 | [xpresser-vue-mongodb](./.bunnyshell/templates/xpresser-nuxt-mongo/README.md) | **NodeJS** backend with **Xpresser** and **MongoDB**, **Vue+Vite** frontend with **Typescript** |
+| [meilisearch-cloud](./.bunnyshell/templates/meilisearch-cloud/README.md)      | **Meilisearch** as a service                                                                    |
