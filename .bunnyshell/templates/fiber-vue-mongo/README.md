@@ -80,7 +80,7 @@ the [dedicated documentation](https://documentation.bunnyshell.com/docs/remote-d
 to [install the Bunnyshell CLI](https://documentation.bunnyshell.com/docs/bunnyshell-cli-install) installed and
 to [authenticate in the CLI](https://documentation.bunnyshell.com/docs/bunnyshell-cli-authentication).
 
-&nbsp;
+
 
 ### Start a Remote Development session
 
@@ -103,7 +103,7 @@ Environment (*ON* is the default value).
 
 You need to choose the way you wish to work with files, before starting the Remote Development session.
 
-&nbsp;
+
 
 #### Working with code from your machine
 
@@ -187,7 +187,7 @@ This should set the path for the current session. If you want to make it permane
 - [How to Start Remote Development](https://documentation.bunnyshell.com/docs/remote-development-start)
     - [with remote files](https://documentation.bunnyshell.com/docs/remote-development-remote-files)
 
-&nbsp;
+
 
 ### Stop a Remote Development session
 

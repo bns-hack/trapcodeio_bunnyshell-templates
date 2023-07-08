@@ -10,7 +10,7 @@ application that demonstrates how the components work together to form an enviro
 You can extend the template by further adding Components, be them more APIs or other services, such as queues, caches,
 block storage etc.
 
-&nbsp;
+
 
 # Environment overview
 
@@ -87,7 +87,7 @@ the [dedicated documentation](https://documentation.bunnyshell.com/docs/remote-d
 to [install the Bunnyshell CLI](https://documentation.bunnyshell.com/docs/bunnyshell-cli-install) installed and
 to [authenticate in the CLI](https://documentation.bunnyshell.com/docs/bunnyshell-cli-authentication).
 
-&nbsp;
+
 
 ### Start a Remote Development session
 
@@ -110,7 +110,7 @@ Environment (*ON* is the default value).
 
 You need to choose the way you wish to work with files, before starting the Remote Development session.
 
-&nbsp;
+
 
 #### Working with code from your machine
 
@@ -145,7 +145,7 @@ $ bns remote-development up --component {YOUR_COMPONENT_ID}
 - [How to Start Remote Development](https://documentation.bunnyshell.com/docs/remote-development-start)
     - [with local files](https://documentation.bunnyshell.com/docs/remote-development-local-files)
 
-&nbsp;
+
 
 #### Working with code from the container
 
@@ -184,7 +184,7 @@ the application in a number of ways, eg. with or without debugging.
 - [How to Start Remote Development](https://documentation.bunnyshell.com/docs/remote-development-start)
     - [with remote files](https://documentation.bunnyshell.com/docs/remote-development-remote-files)
 
-&nbsp;
+
 
 ### Stop a Remote Development session
 
@@ -208,7 +208,7 @@ select *Remote Development*. Then, you just need to replace `up` with `down.
 
 - [Stop Remote Development](https://documentation.bunnyshell.com/docs/remote-development-stop)
 
-&nbsp;
+
 
 ### Debugging in a Remote Development session
 
@@ -217,7 +217,7 @@ use breakpoints, control the flow of execution, see variable values and call sta
 
 The configuration differs based on the way you chose to work, and also on your IDE of choice.
 
-&nbsp;
+
 
 #### Debugging backend with code from your machine
 

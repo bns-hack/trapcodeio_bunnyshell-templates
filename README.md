@@ -1,9 +1,9 @@
 # Trapcode BunnyShell Templates Pack
 
+**NOTE:** This was created for the [Bunnyshell Hackathon](https://bunnyshell.devpost.com/).
+
 This is a repository containing templates for [Bunnyshell's platform](https://www.bunnyshell.com/).
 These templates contain the environment configurations, as well as some simple applications to bootstrap your work.
-
-&nbsp;
 
 📖 Find out more about [Bunnyshell Templates](https://documentation.bunnyshell.com/docs/templates-what-are-templates)
 from the [Bunnyshell documentation](https://documentation.bunnyshell.com/).
@@ -14,7 +14,6 @@ from the [Bunnyshell documentation](https://documentation.bunnyshell.com/).
 
 - [Vue Books App](https://github.com/trapcodeio/vue-books-app)
 - [Nuxt Books App](https://github.com/trapcodeio/nuxt-books-app)
-- [React Books App](https://github.com/bunnyshell/templates/tree/main/components/react-books-app) (Borrowed)
 
 ##### Backend
 

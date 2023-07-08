@@ -4,13 +4,6 @@ This Environment [Template](https://documentation.bunnyshell.com/docs/templates-
 creating a new environment based on a stack using Node.js with XpresserJs for the backend, Nuxt 3 for the
 frontend and MongoDB as the database.
 
-The template provides the Bunnyshell configuration composed of 3 Components (frontend + backend + database) and the CRUD
-application that demonstrates how the components work together to form an environment.
-
-You can extend the template by further adding Components, be them more APIs or other services, such as queues, caches,
-block storage etc.
-
-&nbsp;
 
 # Environment overview
 
@@ -39,8 +32,6 @@ The stage (`dev` or `prod`) can be set from the Environment's configuration (`bu
 Component's `dockerCompose.build.target` property. The default is `dev`, and it can be changed to `prod` to produce
 production-like images.
 
-&nbsp;
-
 # How to use this Template
 
 You can create Environments from
@@ -56,16 +47,6 @@ Remote Development.
 Staging / Testing Environments should be created with the `prod` target for images, in order to have the application
 running as it does in production.
 
-&nbsp;
-
-## Staging / Testing
-
-For staging / testing purposes, the Environments just need to be deployed.
-
-You need to ensure that the `dockerCompose.build.target` is set to `prod` for all the Components, and
-then [deploy the Environment](https://documentation.bunnyshell.com/docs/environment-workflows-deploy).
-
-&nbsp;
 
 ## Remote Development
 
@@ -88,7 +69,7 @@ the [dedicated documentation](https://documentation.bunnyshell.com/docs/remote-d
 to [install the Bunnyshell CLI](https://documentation.bunnyshell.com/docs/bunnyshell-cli-install) installed and
 to [authenticate in the CLI](https://documentation.bunnyshell.com/docs/bunnyshell-cli-authentication).
 
-&nbsp;
+
 
 ### Start a Remote Development session
 
@@ -111,7 +92,7 @@ Environment (*ON* is the default value).
 
 You need to choose the way you wish to work with files, before starting the Remote Development session.
 
-&nbsp;
+
 
 #### Working with code from your machine
 
@@ -146,7 +127,7 @@ $ bns remote-development up --component {YOUR_COMPONENT_ID}
 - [How to Start Remote Development](https://documentation.bunnyshell.com/docs/remote-development-start)
     - [with local files](https://documentation.bunnyshell.com/docs/remote-development-local-files)
 
-&nbsp;
+
 
 #### Working with code from the container
 
@@ -185,7 +166,7 @@ the application in a number of ways, eg. with or without debugging.
 - [How to Start Remote Development](https://documentation.bunnyshell.com/docs/remote-development-start)
     - [with remote files](https://documentation.bunnyshell.com/docs/remote-development-remote-files)
 
-&nbsp;
+
 
 ### Stop a Remote Development session
 
@@ -209,7 +190,7 @@ select *Remote Development*. Then, you just need to replace `up` with `down.
 
 - [Stop Remote Development](https://documentation.bunnyshell.com/docs/remote-development-stop)
 
-&nbsp;
+
 
 ### Debugging in a Remote Development session
 
@@ -218,7 +199,7 @@ use breakpoints, control the flow of execution, see variable values and call sta
 
 The configuration differs based on the way you chose to work, and also on your IDE of choice.
 
-&nbsp;
+
 
 #### Debugging backend with code from your machine
 
@@ -252,7 +233,7 @@ You can now add breakpoints and start debugging.
     - [Debugging node.js](https://documentation.bunnyshell.com/docs/remote-development-debugging-nodejs) for both `app`
       and `api`
 
-&nbsp;
+
 
 #### Debugging backend with code from the container
 
@@ -292,7 +273,7 @@ You can now add breakpoints and start debugging.
 
 - [Debugging remotely with VS Code](https://documentation.bunnyshell.com/docs/remote-development-configure-vs-code)
 
-&nbsp;
+
 
 #### Debugging frontend
 
@@ -305,11 +286,11 @@ You only need to configure your IDE for the Remote Environment, and this is a ma
 
 - [Debugging frontend apps](https://documentation.bunnyshell.com/docs/remote-development-debugging-frontend)
 
-&nbsp;
+
 
 ---
 
-&nbsp;
+
 
 # Important Note
 
