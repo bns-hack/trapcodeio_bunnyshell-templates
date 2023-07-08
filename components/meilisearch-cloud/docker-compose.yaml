@@ -12,7 +12,7 @@ services:
       - MEILI_MASTER_KEY=default_master_key
       - MEILI_HTTP_ADDR=0.0.0.0:7700
     volumes:
-      - meilisearch-data:/usr/src/meilisearch
+      - meilisearch-data:/usr/src/app
   ecommerce:
     build:
       context: ./demo
