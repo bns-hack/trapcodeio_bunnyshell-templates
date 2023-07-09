@@ -1,1 +1,1 @@
-# Meillisearch Cloud
+# Template Overview
