@@ -3,11 +3,7 @@
 This Environment [Template](https://documentation.bunnyshell.com/docs/templates-what-are-templates) is a boilerplate for
 creating a new environment for **Meilisearch** full-text search engine.
 
-The template provides the Bunnyshell configuration composed of 3 Components (frontend + backend + database) and the CRUD
-application that demonstrates how the components work together to form an environment.
-
-You can extend the template by further adding Components, be them more APIs or other services, such as queues, caches,
-block storage etc.
+The template provides the Bunnyshell configuration composed of 2 Components (Search Server + Ecommerce Demo App).
 
 # Environment overview
 
@@ -16,17 +12,13 @@ brings together applications and all the services and databases those applicatio
 
 This Environment Template contains 3 components:
 
-- `app` for frontend, based on a `node` image
-- `api` for backend, also based on a `rust` image
-- `db` using a `mongodb` image
+- `meilisearch` for search server, based on a `debian:bullseye-slim` image
+- `demo` for demo app, based on a `node` image
 
-and 1 persistent volume:
-
-- `data-volume`
 
 ## Container images
 
-The images for both frontend and backend have 2 possible stages: `debug` and `prod`.
+The images for both meilisearch and demo app have 2 possible stages: `dev` and `prod`.
 
 The `dev` stage is suitable for development, as it contains development packages and libraries and has debugging
 enabled.  

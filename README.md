@@ -8,12 +8,18 @@ These templates contain the environment configurations, as well as some simple a
 📖 Find out more about [Bunnyshell Templates](https://documentation.bunnyshell.com/docs/templates-what-are-templates)
 from the [Bunnyshell documentation](https://documentation.bunnyshell.com/).
 
+## Links
+
+- [About This Hackathon](https://devpost.com/software/multiple-book-app-stack-bunnyshell-template)
+- [Usage Tutorial Video](https://www.youtube.com/watch?v=9Z3Z3X6Z3ZM)
+
 ## Featured Repositories
 
 ##### Frontend
 
 - [Vue Books App](https://github.com/trapcodeio/vue-books-app)
 - [Nuxt Books App](https://github.com/trapcodeio/nuxt-books-app)
+- [Meilisearch Ecommerce Demo](https://github.com/meilisearch/ecommerce-demo.git)
 
 ##### Backend
 
@@ -21,7 +27,6 @@ from the [Bunnyshell documentation](https://documentation.bunnyshell.com/).
 - [Golang Fiber Books App](https://github.com/trapcodeio/golang-fiber-books-app)
 - [Deno Oak Books App](https://github.com/trapcodeio/deno-oak-books-app)
 - [NodeJS Xpresser Books App](https://github.com/trapcodeio/xpresser-books-app)
-
 
 ## Templates
 
