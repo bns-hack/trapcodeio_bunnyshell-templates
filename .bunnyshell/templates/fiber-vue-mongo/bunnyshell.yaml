@@ -4,7 +4,7 @@ type: primary
 components:
   - kind: Application
     name: api
-    gitRepo: "https://github.com/trapcodeio/golang-fiber-books-app.git"
+    gitRepo: "https://github.com/bns-hack/trapcodeio_golang-fiber-books-app.git"
     gitBranch: main
     gitApplicationPath: /
     dockerCompose:
@@ -41,7 +41,7 @@ components:
         subPath: ""
   - kind: Application
     name: app
-    gitRepo: "https://github.com/trapcodeio/vue-books-app.git"
+    gitRepo: "https://github.com/bns-hack/trapcodeio_vue-books-app.git"
     gitBranch: main
     gitApplicationPath: /
     dockerCompose:
