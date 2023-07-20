@@ -4,7 +4,7 @@ type: primary
 components:
   - kind: Application
     name: meilisearch
-    gitRepo: 'https://github.com/trapcodeio/bunnyshell-templates.git'
+    gitRepo: 'https://github.com/bns-hack/trapcodeio_bunnyshell-templates.git'
     gitBranch: main
     gitApplicationPath: components/meilisearch-cloud
     dockerCompose:
@@ -24,7 +24,7 @@ components:
 
   - kind: Application
     name: demo
-    gitRepo: "https://github.com/trapcodeio/bunnyshell-templates.git"
+    gitRepo: "https://github.com/bns-hack/trapcodeio_bunnyshell-templates.git"
     gitBranch: main
     gitApplicationPath: components/meilisearch-cloud/demo
     dockerCompose:
