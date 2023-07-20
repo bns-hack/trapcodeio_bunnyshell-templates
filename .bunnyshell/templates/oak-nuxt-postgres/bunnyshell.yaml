@@ -4,7 +4,7 @@ type: primary
 components:
   - kind: Application
     name: api
-    gitRepo: 'https://github.com/trapcodeio/deno-oak-books-app.git'
+    gitRepo: 'https://github.com/bns-hack/trapcodeio_deno-oak-books-app.git'
     gitBranch: main
     gitApplicationPath: /
     dockerCompose:
@@ -50,7 +50,7 @@ components:
 
   - kind: Application
     name: app
-    gitRepo: "https://github.com/trapcodeio/nuxt-books-app.git"
+    gitRepo: "https://github.com/bns-hack/trapcodeio_nuxt-books-app.git"
     gitBranch: main
     gitApplicationPath: /
     dockerCompose:
